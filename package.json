@@ -1,21 +1,21 @@
 {
-  "name": "react-native-bluetooth-serial",
+  "name": "react-native-bluetooth-serial-hex",
   "version": "1.0.0-rc1",
-  "description": "'Bluetooth serial for react native'",
+  "description": "'Bluetooth serial for react native sending hex code to devices'",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rusel1989/react-native-bluetooth-serial.git"
+    "url": "git+https://github.com/instantia-data/react-native-bluetooth-serial-hex"
   },
   "keywords": [
     "bluetooth",
     "react-native"
   ],
-  "author": "Jakub Martyčák <martycakjakub@gmail.com>",
-  "license": "ISC",
+  "author": "Luís Pinto <luis.pinto@instantia.pt>",
+  "license": "GPL",
   "bugs": {
     "url": "https://github.com/rusel1989/react-native-bluetooth-serial/issues"
   },
