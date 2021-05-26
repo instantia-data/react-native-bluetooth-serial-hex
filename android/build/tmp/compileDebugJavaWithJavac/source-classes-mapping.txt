@@ -1,0 +1,13 @@
+com/rusel/RCTBluetoothSerial/BuildConfig.java
+ com.rusel.RCTBluetoothSerial.BuildConfig
+com/rusel/RCTBluetoothSerial/RCTBluetoothSerialService.java
+ com.rusel.RCTBluetoothSerial.RCTBluetoothSerialService
+ com.rusel.RCTBluetoothSerial.RCTBluetoothSerialService$ConnectThread
+ com.rusel.RCTBluetoothSerial.RCTBluetoothSerialService$ConnectedThread
+com/rusel/RCTBluetoothSerial/RCTBluetoothSerialModule.java
+ com.rusel.RCTBluetoothSerial.RCTBluetoothSerialModule
+ com.rusel.RCTBluetoothSerial.RCTBluetoothSerialModule$1
+ com.rusel.RCTBluetoothSerial.RCTBluetoothSerialModule$2
+ com.rusel.RCTBluetoothSerial.RCTBluetoothSerialModule$3
+com/rusel/RCTBluetoothSerial/RCTBluetoothSerialPackage.java
+ com.rusel.RCTBluetoothSerial.RCTBluetoothSerialPackage
