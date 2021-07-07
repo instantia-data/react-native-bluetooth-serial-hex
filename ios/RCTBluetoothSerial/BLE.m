@@ -249,11 +249,17 @@ CBUUID *writeCharacteristicUUID;
     [[self delegate] bleDidDisconnect];
 
     isConnected = false;
+  
+    // MARK: Instatia changes
+    _blueToothState = @"none";
 }
 
 - (void) connectPeripheral:(CBPeripheral *)peripheral
 {
     NSLog(@"Connecting to peripheral with UUID : %@", peripheral.identifier.UUIDString);
+
+    // MARK: Instatia changes
+    _blueToothState = @"connecting";
 
     self.activePeripheral = peripheral;
     self.activePeripheral.delegate = self;
@@ -468,6 +474,9 @@ CBUUID *writeCharacteristicUUID;
         [[self delegate] bleDidDisconnect];
         done = false;
         isConnected = false;
+      
+        // MARK: Instatia changes
+        _blueToothState = @"none";
     }
 
     [[self delegate] bleDidChangedState:isBluetoothEnabled];
@@ -539,6 +548,10 @@ static bool done = false;
                     [self enableReadNotification:activePeripheral];
                     [[self delegate] bleDidConnect];
                     isConnected = true;
+                  
+                    // MARK: Instatia changes
+                    _blueToothState = @"connected";
+                  
                     done = true;
                 }
 

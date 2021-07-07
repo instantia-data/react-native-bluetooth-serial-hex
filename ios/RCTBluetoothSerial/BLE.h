@@ -39,6 +39,8 @@
 @property (strong, nonatomic) NSMutableArray *peripherals;
 @property (strong, nonatomic) CBCentralManager *CM;
 @property (strong, nonatomic) CBPeripheral *activePeripheral;
+// MARK: Instatia changes
+@property (strong, nonatomic) NSString *blueToothState;
 
 -(void) enableReadNotification:(CBPeripheral *)p;
 -(void) read;

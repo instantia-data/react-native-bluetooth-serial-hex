@@ -121,7 +121,7 @@ RCT_EXPORT_METHOD(writeToDevice:(NSString *)message
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejector:(RCTPromiseRejectBlock)reject)
 {
-    NSLog(@"write");
+    /*NSLog(@"write");
     if (message != nil) {
         NSData *data = [[NSData alloc] initWithBase64EncodedString:message options:NSDataBase64DecodingIgnoreUnknownCharacters];
         [_bleShield write:data];
@@ -129,6 +129,28 @@ RCT_EXPORT_METHOD(writeToDevice:(NSString *)message
     } else {
         NSError *err = nil;
         reject(@"no_data", @"Data was null", err);
+    }*/
+  
+    // MARK: Instatia changes
+    NSLog(@"Write %@", message);
+  
+    if (message != nil) {
+      NSMutableString *s = [NSMutableString string];
+      NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+      
+      [_bleShield write:data];
+      
+      for(int i = 0;i < [message length]; ++i) {
+        [s appendString:@"0x"];
+        [s appendFormat:@"%x",[message characterAtIndex:i]];[s appendString:@" "];
+      }
+      
+      NSLog(@"Composing hex is %@ and %@",s, data);
+    
+      resolve((id)kCFBooleanTrue);
+    } else {
+      NSError *err = nil;
+      reject(@"no_data", @"Data was null", err);
     }
 }
 
@@ -158,11 +180,15 @@ RCT_EXPORT_METHOD(isEnabled:(RCTPromiseResolveBlock)resolve
 RCT_EXPORT_METHOD(isConnected:(RCTPromiseResolveBlock)resolve
                   rejector:(RCTPromiseRejectBlock)reject)
 {
-    if (_bleShield.isConnected) {
+    /*if (_bleShield.isConnected) {
         resolve((id)kCFBooleanTrue);
     } else {
         resolve((id)kCFBooleanFalse);
-    }
+    }*/
+  
+  // MARK: Instatia changes
+  resolve(_bleShield.blueToothState);
+  
 }
 
 RCT_EXPORT_METHOD(available:(RCTPromiseResolveBlock)resolve
